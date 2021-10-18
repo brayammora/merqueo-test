@@ -2,38 +2,38 @@
 //  BaseService.swift
 //  merqueo-test
 //
-//  Created by Brayam Alberto Mora Arias - Ceiba Software on 16/10/21.
+//  Created by Brayam Alberto Mora Arias on 16/10/21.
 //
 
 import Foundation
-import Combine
 
 protocol BaseService {
-    func sendRequest<T: Codable>(url: String, of: T.Type, method: HTTPMethod)  -> AnyPublisher<T, Error>
+    func sendRequest<T: Codable>(url: String, of: T.Type, method: HTTPMethod, completion: @escaping (Result<T, CustomError>) -> Void)
 }
 
 extension BaseService {
     
-    func sendRequest<T: Codable>(url: String, of: T.Type, method: HTTPMethod)  -> AnyPublisher<T, Error> {
+    func sendRequest<T: Codable>(url: String, of: T.Type, method: HTTPMethod, completion: @escaping (Result<T, CustomError>) -> Void) {
         guard let url = URL(string: url) else {
-            return Result.Publisher(CustomError.badUrl).eraseToAnyPublisher()
+            completion(.failure(.badUrl))
+            return
         }
         
         var request = URLRequest(url: url)
         request.httpMethod = method.name
         
-        return URLSession.shared.dataTaskPublisher(for: request)
-            .tryMap {
-                guard let response = $0.response as? HTTPURLResponse,
-                        response.statusCode == 200
-                else {
-                    throw CustomError.responseError
-                }
-                
-                return $0.data
+        let task = URLSession.shared.dataTask(with: request) { (data, _, _) in
+            guard let data = data else {
+                completion(.failure(.responseError))
+                return
             }
-            .receive(on: RunLoop.main)
-            .decode(type: T.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
+            do {
+                let response = try JSONDecoder().decode(T.self, from: data)
+                completion(.success(response))
+            } catch {
+                completion(.failure(.unableToParse))
+            }
+        }
+        task.resume()
     }
 }

@@ -2,7 +2,7 @@
 //  merqueo_testTests.swift
 //  merqueo-testTests
 //
-//  Created by Brayam Alberto Mora Arias - Ceiba Software on 15/10/21.
+//  Created by Brayam Alberto Mora Arias on 15/10/21.
 //
 
 import XCTest
