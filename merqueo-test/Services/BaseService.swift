@@ -31,6 +31,7 @@ extension BaseService {
                 let response = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(response))
             } catch {
+                print(error)
                 completion(.failure(.unableToParse))
             }
         }

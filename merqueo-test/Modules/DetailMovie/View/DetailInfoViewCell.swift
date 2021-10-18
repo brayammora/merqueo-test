@@ -2,7 +2,7 @@
 //  DetailInfoViewCell.swift
 //  merqueo-test
 //
-//  Created by Brayam Alberto Mora Arias - Ceiba Software on 18/10/21.
+//  Created by Brayam Alberto Mora Arias on 18/10/21.
 //
 
 
