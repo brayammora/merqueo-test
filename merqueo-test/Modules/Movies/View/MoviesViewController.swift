@@ -34,10 +34,16 @@ extension MoviesViewController: MoviesPresenterOutputProtocol {
         guard let movies = presenter?.movies else {
             return
         }
-        moviesView.configure(movies: movies)
+        moviesView.configure(movies: movies, delegate: self)
     }
     
     func didGetError(_ error: CustomError) {
         
+    }
+}
+
+extension MoviesViewController: MoviesViewDelegate {
+    func showDetail(of movie: Movie) {
+        presenter?.goToDetail(movie: movie, view: self.navigationController)
     }
 }

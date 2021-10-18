@@ -43,8 +43,8 @@ final class MoviesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(movies: [Movie]) {
-        dataSource.configure(movies: movies)
+    func configure(movies: [Movie], delegate: MoviesViewDelegate) {
+        dataSource.configure(movies: movies, delegate: delegate)
     }
     
     private func collectionViewConstraints() {
@@ -53,7 +53,8 @@ final class MoviesView: UIView {
             collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Constants.CollectionView.margin.top),
             collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Constants.CollectionView.margin.left),
             collectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: Constants.CollectionView.margin.right),
-            collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: Constants.CollectionView.margin.bottom)        ]
+            collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: Constants.CollectionView.margin.bottom)
+        ]
         NSLayoutConstraint.activate(constraints)
     }
 }
