@@ -29,6 +29,7 @@ final class MoviesViewController: UIViewController, MoviesViewProtocol {
     private func configureView() {
         setNavigationBarColor()
         view = moviesView
+        title = Constants.title
         moviesView.delegate = self
     }
     
