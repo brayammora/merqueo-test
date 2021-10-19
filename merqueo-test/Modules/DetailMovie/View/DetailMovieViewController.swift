@@ -16,15 +16,24 @@ final class DetailMovieViewController: UIViewController, DetailMovieViewProtocol
         super.viewDidLoad()
         configureView()
         presenter?.getDetailMovie()
+        DispatchQueue.main.async { [weak self] in
+            self?.showLoading()
+        }
+
     }
     
     private func configureView() {
         view = detailMovieView
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 }
 
 extension DetailMovieViewController: DetailMoviePresenterOutputProtocol {
     func didRetrieveDetailMovie() {
+        hideLoading()
         guard let detailMovie = presenter?.detailMovie else {
             return
         }
@@ -33,6 +42,6 @@ extension DetailMovieViewController: DetailMoviePresenterOutputProtocol {
     }
     
     func didGetError(_ error: CustomError) {
-        
+        hideLoading()
     }
 }

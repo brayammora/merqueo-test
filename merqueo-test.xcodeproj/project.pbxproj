@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0CF571271ECE900000A8F5 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0CF570271ECE900000A8F5 /* LoadingScreen.swift */; };
 		BC45AF90271B5E2D0081D1A6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45AF8F271B5E2D0081D1A6 /* HTTPMethod.swift */; };
 		BC45AF92271B5E480081D1A6 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45AF91271B5E480081D1A6 /* CustomError.swift */; };
 		BC45AF94271B5E720081D1A6 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45AF93271B5E720081D1A6 /* BaseService.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC0CF570271ECE900000A8F5 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		BC45AF8F271B5E2D0081D1A6 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		BC45AF91271B5E480081D1A6 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		BC45AF93271B5E720081D1A6 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				BC45AFC1271DE10A0081D1A6 /* CollectionViewHorizontalCustom.swift */,
+				BC0CF570271ECE900000A8F5 /* LoadingScreen.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				BC45AF92271B5E480081D1A6 /* CustomError.swift in Sources */,
 				BC45AFB5271D1DD50081D1A6 /* MoviesView.swift in Sources */,
 				BC45AFA5271CC71B0081D1A6 /* GetMoviesInteractorProtocols.swift in Sources */,
+				BC0CF571271ECE900000A8F5 /* LoadingScreen.swift in Sources */,
 				BC45AFBB271D281C0081D1A6 /* MoviesDataSource.swift in Sources */,
 				BC45AFE2271E21F30081D1A6 /* GetDetailMovieInteractorProtocols.swift in Sources */,
 				BC45AFD2271DF3F20081D1A6 /* DetailMovieViewProtocols.swift in Sources */,

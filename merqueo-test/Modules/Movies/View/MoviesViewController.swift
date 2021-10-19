@@ -21,6 +21,9 @@ final class MoviesViewController: UIViewController, MoviesViewProtocol {
         super.viewDidLoad()
         configureView()
         presenter?.getMovies()
+        DispatchQueue.main.async { [weak self] in
+            self?.showLoading()
+        }
     }
     
     private func configureView() {
@@ -41,6 +44,7 @@ final class MoviesViewController: UIViewController, MoviesViewProtocol {
 
 extension MoviesViewController: MoviesPresenterOutputProtocol {
     func didRetrieveMovies() {
+        hideLoading()
         guard let movies = presenter?.movies else {
             return
         }
@@ -48,7 +52,7 @@ extension MoviesViewController: MoviesPresenterOutputProtocol {
     }
     
     func didGetError(_ error: CustomError) {
-        
+        hideLoading()
     }
 }
 
