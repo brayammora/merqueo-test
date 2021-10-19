@@ -10,6 +10,10 @@ import UIKit
 
 final class DetailImageViewCell: UITableViewCell {
     
+    private enum Constants {
+        static let height: CGFloat = 250
+    }
+    
     private lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -18,6 +22,8 @@ final class DetailImageViewCell: UITableViewCell {
     }()
 
     func configure(data: String) {
+        let completeUrl = String(format: Path.basePathFormat ,Path.baseImageUrl, data)
+        posterImageView.downloadImage(from: completeUrl)
         posterImageViewConstraints()
     }
     
@@ -27,7 +33,8 @@ final class DetailImageViewCell: UITableViewCell {
             posterImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             posterImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             posterImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            posterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            posterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            posterImageView.heightAnchor.constraint(equalToConstant: Constants.height)
         ])
     }
 }

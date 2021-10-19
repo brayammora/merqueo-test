@@ -8,16 +8,16 @@
 import Foundation
 
 struct DetailMovie: Codable {
-    let originalTitle: String
-    let overview: String?
-    let backdropPath: String?
+    let title: String
+    let summary: String?
+    let image: String?
     let releaseDate: String
     let status: String
     
     enum CodingKeys: String, CodingKey {
-        case originalTitle = "original_title"
-        case overview = "overview"
-        case backdropPath = "backdrop_path"
+        case title = "original_title"
+        case summary = "overview"
+        case image = "backdrop_path"
         case releaseDate = "release_date"
         case status = "status"
     }

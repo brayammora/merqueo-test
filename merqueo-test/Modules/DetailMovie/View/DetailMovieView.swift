@@ -11,19 +11,18 @@ final class DetailMovieView: UIView {
     
     private enum Constants {
         enum TableView {
-            static let margin: UIEdgeInsets = .init(top: 4, left: 4, bottom: -4, right: -4)
+            static let margin: UIEdgeInsets = .init(top: 5, left: 5, bottom: -5, right: -5)
         }
     }
     
-    private lazy var tableView: UITableView = {
+    private var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .black
         tableView.separatorStyle = .none
-        tableView.isUserInteractionEnabled = true
-        tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.sectionHeaderHeight = UITableView.automaticDimension
-        tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
+        tableView.allowsSelection = false
+        tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(DetailImageViewCell.self, forCellReuseIdentifier: DetailImageViewCell.reuseIdentifier)
         tableView.register(DetailInfoViewCell.self, forCellReuseIdentifier: DetailInfoViewCell.reuseIdentifier)
         return tableView
@@ -45,8 +44,9 @@ final class DetailMovieView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(movie: Movie) {
-        dataSource.configure(data: movie)
+    func configure(detailMovie: DetailMovie) {
+        dataSource.configure(data: detailMovie)
+        tableView.reloadData()
     }
     
     private func tableViewConstraints() {

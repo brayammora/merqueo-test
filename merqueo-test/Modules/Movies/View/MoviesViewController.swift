@@ -11,6 +11,7 @@ import UIKit
 final class MoviesViewController: UIViewController, MoviesViewProtocol {
     private enum Constants {
         static let title = "Movies"
+        static let emptyTitle = ""
     }
     
     var presenter: MoviesPresenterInputProtocol?
@@ -24,8 +25,17 @@ final class MoviesViewController: UIViewController, MoviesViewProtocol {
     
     private func configureView() {
         setNavigationBarColor()
-        title = Constants.title
         view = moviesView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = Constants.title
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        title = Constants.emptyTitle
     }
 }
 

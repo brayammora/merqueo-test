@@ -49,6 +49,7 @@
 		BC45AFEA271E245D0081D1A6 /* DetailMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45AFE9271E245D0081D1A6 /* DetailMovie.swift */; };
 		BC45AFED271E267E0081D1A6 /* DetailMovieServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45AFEC271E267E0081D1A6 /* DetailMovieServiceProtocols.swift */; };
 		BC45AFEF271E26FC0081D1A6 /* DetailMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45AFEE271E26FC0081D1A6 /* DetailMovieService.swift */; };
+		BC45AFF1271E3E4E0081D1A6 /* DetailMovieTableViewSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45AFF0271E3E4E0081D1A6 /* DetailMovieTableViewSections.swift */; };
 		BCD045F3271A2C99003874FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD045F2271A2C99003874FB /* AppDelegate.swift */; };
 		BCD045F5271A2C99003874FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD045F4271A2C99003874FB /* SceneDelegate.swift */; };
 		BCD045FC271A2CA1003874FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD045FB271A2CA1003874FB /* Assets.xcassets */; };
@@ -118,6 +119,7 @@
 		BC45AFE9271E245D0081D1A6 /* DetailMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovie.swift; sourceTree = "<group>"; };
 		BC45AFEC271E267E0081D1A6 /* DetailMovieServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieServiceProtocols.swift; sourceTree = "<group>"; };
 		BC45AFEE271E26FC0081D1A6 /* DetailMovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieService.swift; sourceTree = "<group>"; };
+		BC45AFF0271E3E4E0081D1A6 /* DetailMovieTableViewSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieTableViewSections.swift; sourceTree = "<group>"; };
 		BCD045EF271A2C99003874FB /* merqueo-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "merqueo-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD045F2271A2C99003874FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCD045F4271A2C99003874FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				BC45AFD3271DF44B0081D1A6 /* DetailMovieViewController.swift */,
 				BC45AFD5271DF4D10081D1A6 /* DetailMovieView.swift */,
 				BC45AFD7271DF8C60081D1A6 /* DetailMovieDataSource.swift */,
+				BC45AFF0271E3E4E0081D1A6 /* DetailMovieTableViewSections.swift */,
 				BC45AFD9271DF9530081D1A6 /* DetailImageViewCell.swift */,
 				BC45AFDB271DF9610081D1A6 /* DetailInfoViewCell.swift */,
 			);
@@ -547,6 +550,7 @@
 			files = (
 				BC45AFCE271DF3530081D1A6 /* DetailMoviePresenter.swift in Sources */,
 				BC45AFDA271DF9530081D1A6 /* DetailImageViewCell.swift in Sources */,
+				BC45AFF1271E3E4E0081D1A6 /* DetailMovieTableViewSections.swift in Sources */,
 				BC45AFBD271DA2AE0081D1A6 /* UIImageViewExtension.swift in Sources */,
 				BC45AFED271E267E0081D1A6 /* DetailMovieServiceProtocols.swift in Sources */,
 				BC45AFA7271CC8330081D1A6 /* GetMoviesInteractor.swift in Sources */,

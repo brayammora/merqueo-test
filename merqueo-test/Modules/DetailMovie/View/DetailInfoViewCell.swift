@@ -11,27 +11,19 @@ import UIKit
 final class DetailInfoViewCell: UITableViewCell {
     
     private enum Constants {
-        enum StackView {
-            static let spacing: CGFloat = 8
-        }
-        
         enum TitleLabel {
+            static let margins: UIEdgeInsets = .init(top: 10, left: 0, bottom: 0, right: 0)
             static let textColor: UIColor? = .red
-            static let font = UIFont.systemFont(ofSize: 14, weight: .bold)
+            static let font = UIFont.systemFont(ofSize: 20, weight: .bold)
         }
         
         enum InformationLabel {
+            static let margins: UIEdgeInsets = .init(top: 5, left: 0, bottom: 0, right: 0)
             static let textColor: UIColor? = .white
-            static let font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+            static let font = UIFont.systemFont(ofSize: 16, weight: .semibold)
             static let numberOfLines = 0
         }
     }
-    
-    private lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [titleLabel, informationLabel])
-        stack.spacing = Constants.StackView.spacing
-        return stack
-    }()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -50,17 +42,32 @@ final class DetailInfoViewCell: UITableViewCell {
         return label
     }()
 
-    func configure(data: Movie) {
-        stackViewConstraints()
+    func configure(title: String, text: String) {
+        titleLabel.text = title
+        informationLabel.text = text
+        backgroundColor = .black
+        titleLabelConstraints()
+        informationLabelConstraints()
     }
     
-    private func stackViewConstraints() {
-        contentView.addSubview(stackView)
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
+    private func titleLabelConstraints() {
+        contentView.addSubview(titleLabel)
+        let constraints = [
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.TitleLabel.margins.top),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        ]
+        NSLayoutConstraint.activate(constraints)
+    }
+    
+    private func informationLabelConstraints() {
+        contentView.addSubview(informationLabel)
+        let constraints = [
+            informationLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Constants.TitleLabel.margins.top),
+            informationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            informationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            informationLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ]
+        NSLayoutConstraint.activate(constraints)
     }
 }

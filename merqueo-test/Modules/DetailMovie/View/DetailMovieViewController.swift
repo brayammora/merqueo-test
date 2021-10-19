@@ -8,12 +8,18 @@
 import UIKit
 
 final class DetailMovieViewController: UIViewController, DetailMovieViewProtocol {
-
+    
     var presenter: DetailMoviePresenterInputProtocol?
+    private var detailMovieView = DetailMovieView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
         presenter?.getDetailMovie()
+    }
+    
+    private func configureView() {
+        view = detailMovieView
     }
 }
 
@@ -22,7 +28,8 @@ extension DetailMovieViewController: DetailMoviePresenterOutputProtocol {
         guard let detailMovie = presenter?.detailMovie else {
             return
         }
-        print(detailMovie)
+        title = detailMovie.title
+        detailMovieView.configure(detailMovie: detailMovie)
     }
     
     func didGetError(_ error: CustomError) {
