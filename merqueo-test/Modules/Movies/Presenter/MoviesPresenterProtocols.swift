@@ -19,5 +19,6 @@ protocol MoviesPresenterInputProtocol {
 
 protocol MoviesPresenterOutputProtocol: AnyObject {
     func didRetrieveMovies()
-    func didGetError(_ error: CustomError)
+    func didGetError(_ message: String)
+    func endRefresh()
 }

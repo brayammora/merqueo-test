@@ -11,4 +11,5 @@ enum CustomError: Error {
     case badUrl
     case responseError
     case unableToParse
+    case noInternetConnection
 }

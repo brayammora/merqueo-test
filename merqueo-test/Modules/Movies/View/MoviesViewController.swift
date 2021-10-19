@@ -29,6 +29,8 @@ final class MoviesViewController: UIViewController, MoviesViewProtocol {
     private func configureView() {
         setNavigationBarColor()
         view = moviesView
+        title = Constants.title
+        moviesView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,13 +53,22 @@ extension MoviesViewController: MoviesPresenterOutputProtocol {
         moviesView.configure(movies: movies, delegate: self)
     }
     
-    func didGetError(_ error: CustomError) {
+    func didGetError(_ message: String) {
         hideLoading()
+        moviesView.setErrorScreen(message: message)
+    }
+    
+    func endRefresh() {
+        moviesView.endRefresh()
     }
 }
 
 extension MoviesViewController: MoviesViewDelegate {
     func showDetail(of movie: Movie) {
         presenter?.goToDetail(movie: movie, view: self.navigationController)
+    }
+    
+    func refresh() {
+        presenter?.getMovies()
     }
 }
