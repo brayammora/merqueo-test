@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC0CF571271ECE900000A8F5 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0CF570271ECE900000A8F5 /* LoadingScreen.swift */; };
+		BC0CF573271F3D0E0000A8F5 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0CF572271F3D0E0000A8F5 /* UICollectionViewExtensions.swift */; };
 		BC45AF90271B5E2D0081D1A6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45AF8F271B5E2D0081D1A6 /* HTTPMethod.swift */; };
 		BC45AF92271B5E480081D1A6 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45AF91271B5E480081D1A6 /* CustomError.swift */; };
 		BC45AF94271B5E720081D1A6 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45AF93271B5E720081D1A6 /* BaseService.swift */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		BC0CF570271ECE900000A8F5 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
+		BC0CF572271F3D0E0000A8F5 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		BC45AF8F271B5E2D0081D1A6 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		BC45AF91271B5E480081D1A6 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		BC45AF93271B5E720081D1A6 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				BC45AFB6271D25810081D1A6 /* Reusable.swift */,
 				BC45AFBC271DA2AE0081D1A6 /* UIImageViewExtension.swift */,
 				BC45AFBE271DDC8C0081D1A6 /* UIViewControllerExtension.swift */,
+				BC0CF572271F3D0E0000A8F5 /* UICollectionViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				BC45AFD4271DF44B0081D1A6 /* DetailMovieViewController.swift in Sources */,
 				BC45AFAB271CE19E0081D1A6 /* MoviesPresenterProtocols.swift in Sources */,
 				BC45AFE5271E22E40081D1A6 /* DetailMovieRepository.swift in Sources */,
+				BC0CF573271F3D0E0000A8F5 /* UICollectionViewExtensions.swift in Sources */,
 				BC45AFB1271CE6900081D1A6 /* MoviesViewController.swift in Sources */,
 				BC45AFA1271B7B340081D1A6 /* MoviesRepository.swift in Sources */,
 				BC45AFDC271DF9610081D1A6 /* DetailInfoViewCell.swift in Sources */,

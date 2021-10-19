@@ -22,16 +22,22 @@ extension BaseService {
         var request = URLRequest(url: url)
         request.httpMethod = method.name
         
-        let task = URLSession.shared.dataTask(with: request) { (data, _, _) in
+        let task = URLSession.shared.dataTask(with: request) { (data, response, _) in
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                      completion(.failure(.noInternetConnection))
+                return
+            }
+            
             guard let data = data else {
                 completion(.failure(.responseError))
                 return
             }
+            
             do {
                 let response = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(response))
             } catch {
-                print(error)
                 completion(.failure(.unableToParse))
             }
         }

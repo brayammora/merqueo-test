@@ -16,6 +16,15 @@ final class MoviesView: UIView {
         }
     }
     
+    weak var delegate: MoviesViewDelegate?
+    
+    private lazy var refreshControl: UIRefreshControl = {
+       let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        refreshControl.tintColor = .white
+        return refreshControl
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = CollectionViewHorizontalCustom()
         layout.height = Constants.CollectionView.heightItem
@@ -23,6 +32,7 @@ final class MoviesView: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(MoviesViewCell.self, forCellWithReuseIdentifier: MoviesViewCell.reuseIdentifier)
         collectionView.backgroundColor = .black
+        collectionView.addSubview(refreshControl)
         return collectionView
     }()
     
@@ -45,6 +55,20 @@ final class MoviesView: UIView {
     
     func configure(movies: [Movie], delegate: MoviesViewDelegate) {
         dataSource.configure(movies: movies, delegate: delegate)
+    }
+    
+    func endRefresh() {
+        if refreshControl.isRefreshing {
+            refreshControl.endRefreshing()
+        }
+    }
+    
+    func setErrorScreen(message: String) {
+        collectionView.setEmptyMessage(message)
+    }
+    
+    @objc private func onRefresh() {
+        delegate?.refresh()
     }
     
     private func collectionViewConstraints() {

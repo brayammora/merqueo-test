@@ -13,4 +13,5 @@ protocol MoviesViewProtocol: AnyObject {
 
 protocol MoviesViewDelegate: AnyObject {
     func showDetail(of movie: Movie)
+    func refresh()
 }
