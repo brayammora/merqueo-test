@@ -17,7 +17,7 @@ final class MoviesPresenter: MoviesPresenterInputProtocol {
         getMoviesInteractor?.execute()
     }
     
-    func gotToDetail(movie: Movie, view: UINavigationController?) {
+    func goToDetail(movie: Movie, view: UINavigationController?) {
         router?.presentDetailMovie(movie: movie, navController: view)
     }
 }

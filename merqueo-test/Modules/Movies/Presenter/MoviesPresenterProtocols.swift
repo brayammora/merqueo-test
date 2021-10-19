@@ -14,7 +14,7 @@ protocol MoviesPresenterInputProtocol {
     var router: MoviesRouterProtocol? { get set }
     
     func getMovies()
-    func gotToDetail(movie: Movie, view: UINavigationController?)
+    func goToDetail(movie: Movie, view: UINavigationController?)
 }
 
 protocol MoviesPresenterOutputProtocol: AnyObject {

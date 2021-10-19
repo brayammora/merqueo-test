@@ -10,11 +10,13 @@ import UIKit
 final class MoviesDataSource: NSObject {
     
     private var movies: [Movie] = []
-
+    weak var delegate: MoviesViewDelegate?
+    
     override init() { }
     
-    func configure(movies: [Movie]) {
+    func configure(movies: [Movie], delegate: MoviesViewDelegate) {
         self.movies = movies
+        self.delegate = delegate
     }
 }
 
@@ -38,6 +40,7 @@ extension MoviesDataSource: UICollectionViewDataSource {
 
 extension MoviesDataSource: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let movie = movies[indexPath.row]
+        delegate?.showDetail(of: movie)
     }
 }

@@ -10,3 +10,7 @@ import Foundation
 protocol MoviesViewProtocol: AnyObject {
     var presenter: MoviesPresenterInputProtocol? { get set }
 }
+
+protocol MoviesViewDelegate: AnyObject {
+    func showDetail(of movie: Movie)
+}

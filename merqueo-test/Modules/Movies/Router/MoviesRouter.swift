@@ -34,7 +34,7 @@ final class MoviesRouter: MoviesRouterProtocol {
     }
     
     func presentDetailMovie(movie: Movie, navController: UINavigationController?) {
-//        let detailMovieTableViewController: DetailMovieTableViewController = DetailMovieRouter.createModule(movie: Movie)
-//        navController?.pushViewController(detailMovieTableViewController, animated: true)
+        let detailMovieViewController: DetailMovieViewController = DetailMovieRouter.createModule(movie: movie)
+        navController?.pushViewController(detailMovieViewController, animated: true)
     }
 }
