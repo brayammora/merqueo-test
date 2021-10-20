@@ -73,6 +73,12 @@
 		BCD045FF271A2CA1003874FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD045FD271A2CA1003874FB /* LaunchScreen.storyboard */; };
 		BCD04614271A2CA2003874FB /* merqueo_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD04613271A2CA2003874FB /* merqueo_testUITests.swift */; };
 		BCD04616271A2CA2003874FB /* merqueo_testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD04615271A2CA2003874FB /* merqueo_testUITestsLaunchTests.swift */; };
+		BCE8B33C271F9D7700C7575B /* ExtensionsCapture.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE8B337271F9D7600C7575B /* ExtensionsCapture.png */; };
+		BCE8B33D271F9D7700C7575B /* ModulesCapture.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE8B338271F9D7600C7575B /* ModulesCapture.png */; };
+		BCE8B33E271F9D7700C7575B /* UnitTestCapture.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE8B339271F9D7600C7575B /* UnitTestCapture.png */; };
+		BCE8B33F271F9D7700C7575B /* ServicesCapture.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE8B33A271F9D7600C7575B /* ServicesCapture.png */; };
+		BCE8B340271F9D7700C7575B /* AppCapture.png in Resources */ = {isa = PBXBuildFile; fileRef = BCE8B33B271F9D7700C7575B /* AppCapture.png */; };
+		BCE8B342271FA0A300C7575B /* AppWorking.gif in Resources */ = {isa = PBXBuildFile; fileRef = BCE8B341271FA0A200C7575B /* AppWorking.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +169,12 @@
 		BCD0460F271A2CA2003874FB /* merqueo-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "merqueo-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD04613271A2CA2003874FB /* merqueo_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = merqueo_testUITests.swift; sourceTree = "<group>"; };
 		BCD04615271A2CA2003874FB /* merqueo_testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = merqueo_testUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BCE8B337271F9D7600C7575B /* ExtensionsCapture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExtensionsCapture.png; sourceTree = "<group>"; };
+		BCE8B338271F9D7600C7575B /* ModulesCapture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ModulesCapture.png; sourceTree = "<group>"; };
+		BCE8B339271F9D7600C7575B /* UnitTestCapture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnitTestCapture.png; sourceTree = "<group>"; };
+		BCE8B33A271F9D7600C7575B /* ServicesCapture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ServicesCapture.png; sourceTree = "<group>"; };
+		BCE8B33B271F9D7700C7575B /* AppCapture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppCapture.png; sourceTree = "<group>"; };
+		BCE8B341271FA0A200C7575B /* AppWorking.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AppWorking.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +332,19 @@
 				BC0CF59F271F90B40000A8F5 /* MoviesRepositoryTest.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		BC0CF5A1271F9BB40000A8F5 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				BCE8B341271FA0A200C7575B /* AppWorking.gif */,
+				BCE8B33B271F9D7700C7575B /* AppCapture.png */,
+				BCE8B337271F9D7600C7575B /* ExtensionsCapture.png */,
+				BCE8B338271F9D7600C7575B /* ModulesCapture.png */,
+				BCE8B33A271F9D7600C7575B /* ServicesCapture.png */,
+				BCE8B339271F9D7600C7575B /* UnitTestCapture.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		BC45AF9B271B78340081D1A6 /* Remote */ = {
@@ -515,6 +540,7 @@
 		BCD045F1271A2C99003874FB /* merqueo-test */ = {
 			isa = PBXGroup;
 			children = (
+				BC0CF5A1271F9BB40000A8F5 /* Screenshots */,
 				BC45AFC0271DE0EF0081D1A6 /* Common */,
 				BCD04625271A2D9F003874FB /* Modules */,
 				BCD04624271A2D44003874FB /* Services */,
@@ -691,7 +717,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE8B33F271F9D7700C7575B /* ServicesCapture.png in Resources */,
 				BCD045FF271A2CA1003874FB /* LaunchScreen.storyboard in Resources */,
+				BCE8B33C271F9D7700C7575B /* ExtensionsCapture.png in Resources */,
+				BCE8B33D271F9D7700C7575B /* ModulesCapture.png in Resources */,
+				BCE8B342271FA0A300C7575B /* AppWorking.gif in Resources */,
+				BCE8B33E271F9D7700C7575B /* UnitTestCapture.png in Resources */,
+				BCE8B340271F9D7700C7575B /* AppCapture.png in Resources */,
 				BCD045FC271A2CA1003874FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
