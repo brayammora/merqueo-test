@@ -55,6 +55,7 @@ final class MoviesView: UIView {
     
     func configure(movies: [Movie], delegate: MoviesViewDelegate) {
         dataSource.configure(movies: movies, delegate: delegate)
+        refreshData()
     }
     
     func endRefresh() {
@@ -69,6 +70,10 @@ final class MoviesView: UIView {
     
     @objc private func onRefresh() {
         delegate?.refresh()
+    }
+    
+    private func refreshData() {
+        collectionView.reloadData()
     }
     
     private func collectionViewConstraints() {

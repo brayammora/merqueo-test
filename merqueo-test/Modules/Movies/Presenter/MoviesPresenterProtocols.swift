@@ -9,6 +9,7 @@ import UIKit
 
 protocol MoviesPresenterInputProtocol {
     var movies: [Movie] { get set }
+    var moviesFiltered: [Movie] { get set }
     var view: MoviesPresenterOutputProtocol? { get set }
     var getMoviesInteractor: GetMoviesInteractorInputProtocol? { get set }
     var router: MoviesRouterProtocol? { get set }
